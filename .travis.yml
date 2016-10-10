@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+    - "node"
+    - "6"
+    - "6.1"
+    - "5.11"
+    - "iojs"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

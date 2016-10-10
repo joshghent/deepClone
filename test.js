@@ -1,7 +1,7 @@
-var expect = require('chai').expect;
+var assert = require('assert');
 var clone = require('./');
 
-describe('#deepClone', function () {
+describe('deepClone()', function () {
     it ('can clone primitives', function () {
 
     });
