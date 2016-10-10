@@ -1,0 +1,32 @@
+{
+  "name": "deepclone",
+  "version": "0.1.0",
+  "description": "Deep copy library for any data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshghent/deepClone.git"
+  },
+  "keywords": [
+    "deep",
+    "clone",
+    "copy",
+    "data",
+    "data structures",
+    "deep copy",
+    "deep clone"
+  ],
+  "author": "Josh Ghent <me@joshghent.com> (https://joshghent.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshghent/deepClone/issues"
+  },
+  "homepage": "https://github.com/joshghent/deepClone#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.1.1"
+  }
+}
