@@ -3,18 +3,22 @@ var clone = require('./');
 
 describe('deepClone()', function () {
     it ('can clone primitives', function () {
-        assert.deepEqual(deepClone(5), 5);
-        assert.deepEqual(deepClone('test'), 'test');
+        assert.deepEqual(clone.deepClone(5), 5);
+        assert.deepEqual(clone.deepClone('test'), 'test');
     });
 
     it ('can clone arrays', function () {
+        let arr = [1, 2, 3, 4, 5];
+        let strArr = ['Hello', 'World'];
 
+        assert.deepEqual(clone.deepClone(arr), arr);
+        assert.deepEqual(clone.deepClone(strArr), strArr);
     });
 
     it ('can clone objects', function () {
         var obj = {a: 0, b: 1, c: 2};
 
-        assert.deepEqual(clone(obj), obj);
+        assert.deepEqual(clone.deepClone(obj), obj);
     });
 
     it ('returns undefined when passed undefined', function () {});
@@ -22,7 +26,7 @@ describe('deepClone()', function () {
     it ('can clone date objects', function () {
         var date = new Date();
 
-        assert.deepEqual(deepClone(date), date);
+        assert.deepEqual(clone.deepClone(date), date);
     });
 
     it ('can clone arrays of arrays', function () {});
