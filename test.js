@@ -55,7 +55,11 @@ describe('deepClone()', function () {
         assert.deepEqual(clone.deepClone(arr), arr);
     });
 
-    it ('can clone arrays filled with nulls and undefined', function () {});
+    it ('can clone arrays filled with nulls and undefined', function () {
+        var arr = [null, undefined, undefined, null];
+
+        assert.deepEqual(clone.deepClone(arr), arr);
+    });
     
     it ('can clone objects filled with nulls and undefined', function () {});
     
