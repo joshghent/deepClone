@@ -8,8 +8,8 @@ describe('deepClone()', function () {
     });
 
     it ('can clone arrays', function () {
-        let arr = [1, 2, 3, 4, 5];
-        let strArr = ['Hello', 'World'];
+        var arr = [1, 2, 3, 4, 5];
+        var strArr = ['Hello', 'World'];
 
         assert.deepEqual(clone.deepClone(arr), arr);
         assert.deepEqual(clone.deepClone(strArr), strArr);
