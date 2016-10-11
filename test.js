@@ -77,7 +77,14 @@ describe('deepClone()', function () {
     
     it ('can clone NaN', function () {});
     
-    it ('can detect circular references', function () {});
+    it ('can detect circular references', function () {
+        var a = {};
+        var b = {};
+        a.b = b;
+        b.a = a;
+
+        assert.equal(clone.deepClone(a), a);
+    });
 
     it ('can clone symbols', function () {});
 });

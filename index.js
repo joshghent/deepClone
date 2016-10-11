@@ -6,6 +6,29 @@ function getDataType (data) {
     return Object.prototype.toString.call(data).slice(8, -1);
 }
 
+function isCyclic (data) {
+    let seenObjects = [];
+
+    function detect (data) {
+        if (data && getDataType(data) === "Object") {
+            if (seenObjects.indexOf(data) !== -1) {
+                return true;
+            }
+
+            seenObjects.push(data);
+
+            for (var key in data) {
+                if (data.hasOwnProperty(key) === true && detect(data[key])) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    return detect(data);
+}
+
 Clone.prototype.deepClone = function (data) {
     // If the data is null or undefined then we return undefined
     if (data === null || data === undefined) {
@@ -20,6 +43,10 @@ Clone.prototype.deepClone = function (data) {
     }
 
     if (dataType === "Object") {
+        if (isCyclic(data) === true) {
+            return data;
+        }
+
         let copiedObject = {};
 
         for (let key in data) {
