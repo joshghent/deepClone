@@ -10,7 +10,13 @@ describe('deepClone()', function () {
     it ('can clone arrays', function () {
 
     });
-    it ('can clone objects', function () {});
+
+    it ('can clone objects', function () {
+        var obj = {a: 0, b: 1, c: 2};
+
+        assert.deepEqual(clone(obj), obj);
+    });
+
     it ('returns undefined when passed undefined', function () {});
     it ('returns undefined when null is passed', function () {});
     it ('can clone date objects', function () {
@@ -18,6 +24,7 @@ describe('deepClone()', function () {
 
         assert.deepEqual(deepClone(date), date);
     });
+
     it ('can clone arrays of arrays', function () {});
     it ('can clone arrays of objects', function () {});
     it ('can clone arrays filled with nulls and undefined', function () {});
