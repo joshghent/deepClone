@@ -1,6 +1,6 @@
 {
   "name": "deepclone",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Deep copy library for any data structure",
   "main": "index.js",
   "scripts": {
