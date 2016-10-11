@@ -5,6 +5,3 @@ node_js:
     - "6.1"
     - "5.11"
     - "iojs"
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
