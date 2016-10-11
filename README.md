@@ -1,4 +1,5 @@
-# Deep Clone
+# Deep Clone [![Build Status](https://travis-ci.org/joshghent/deepClone.svg?branch=master)](https://travis-ci.org/joshghent/deepClone) [![codecov](https://codecov.io/gh/joshghent/deepClone/branch/master/graph/badge.svg)](https://codecov.io/gh/joshghent/deepClone)
+
 A single method library used for cloning any sort of data structure in javascript!
 
 ## Usage
