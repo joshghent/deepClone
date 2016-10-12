@@ -69,13 +69,15 @@ describe('deepClone()', function () {
     
     it ('can clone objects with a nested arrays as a value', function () {});
     
-    it ('can clone regex', function () {});
+    it ('can clone regex', function () {
+        assert.deepEqual(clone.deepClone(/foo/g), /foo/g);
+    });
     
     it ('can clone functions', function () {});
     
-    it ('can clone promises', function () {});
-    
-    it ('can clone NaN', function () {});
+    it ('can clone promises', function () {
+
+    });
     
     it ('can detect circular references', function () {
         var a = {};
