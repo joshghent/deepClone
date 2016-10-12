@@ -21,6 +21,13 @@ describe('deepClone()', function () {
         assert.deepEqual(clone.deepClone(obj), obj);
     });
 
+    it ('can deep clone objects', function () {
+        var obj = { a: 1, b: 0};
+        var copyObj = clone.deepClone(obj);
+        copyObj.b = 10;
+        assert.notDeepEqual(copyObj, obj);
+    });
+
     it ('returns undefined when passed undefined', function () {
         assert.deepEqual(clone.deepClone(undefined), undefined);
     });

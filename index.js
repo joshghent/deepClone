@@ -52,6 +52,8 @@ Clone.prototype.deepClone = function (data) {
         for (let key in data) {
             copiedObject[key] = this.deepClone(data[key]);
         }
+
+        return copiedObject;
     }
 
     if (dataType === "Array") {
