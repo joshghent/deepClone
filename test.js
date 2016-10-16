@@ -15,6 +15,14 @@ describe('deepClone()', function () {
         assert.deepEqual(clone.deepClone(strArr), strArr);
     });
 
+    it ('can deeply cloning arrays', function () {
+        var arr = [[1,2,3,4], [5,6,7,8,9], [10,11,12,13,14]];
+        var cloneArr = clone.deepClone(arr);
+        cloneArr[0] = ['a', 'b', 'c', 'd'];
+
+        assert.notDeepEqual(cloneArr, arr);
+    });
+
     it ('can clone objects', function () {
         var obj = {a: 0, b: 1, c: 2};
 

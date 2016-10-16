@@ -2,6 +2,8 @@
 
 A single method library used for cloning any sort of data structure in javascript!
 
+[![NPM](https://nodei.co/npm/clonedeep.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/clonedeep/)
+
 ## Usage
 ```js
 // Import
