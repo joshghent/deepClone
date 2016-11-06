@@ -82,7 +82,14 @@ describe('deepClone()', function () {
         assert.deepEqual(clone.deepClone(obj), obj);
     });
     
-    it ('can clone objects with a nested arrays as a value', function () {});
+    it ('can clone objects with a nested arrays as a value', function () {
+        var obj = {
+            a: [["things", 1, 2], ["hello", 6, 5, 4], ["world", 4, 31]],
+            b: [["test"], ["more testing"]]
+        }
+        
+        assert.deepEqual(clone.deepClone(obj), obj);
+    });
     
     it ('can clone regex', function () {
         assert.deepEqual(clone.deepClone(/foo/g), /foo/g);
