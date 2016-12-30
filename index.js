@@ -1,8 +1,5 @@
 'use strict';
 
-// Create the method to export
-const Clone = function () {}
-
 // Method that will return the data type for any structure passed to it
 function getDataType (data) {
     // Use the objects toString method on the data.
@@ -45,7 +42,7 @@ function isCyclic (data) {
     return detect(data);
 }
 
-Clone.prototype.deepClone = function (data) {
+const deepClone = function (data) {
     // If the data is null or undefined then we return undefined
     if (data === null || data === undefined) {
         return undefined;
@@ -78,7 +75,7 @@ Clone.prototype.deepClone = function (data) {
             // Clone the keys of each of the objects so that we can deeply copy and nested data structures
             // For example if an object has a key value that is an array
             // Add this cloned key value to the copiedObject we created earlier
-            copiedObject[key] = this.deepClone(data[key]);
+            copiedObject[key] = deepClone(data[key]);
         }
 
         // Return the deeply copied object
@@ -95,7 +92,7 @@ Clone.prototype.deepClone = function (data) {
             // Push the arrays elements to this new array
             // First recall this method with the elements
             // This is so arrays of objects and other nested data structures get correctly cloned.
-            copiedArray.push(this.deepClone(data[i]));
+            copiedArray.push(deepClone(data[i]));
         }
 
         // Return the cloned array
@@ -109,4 +106,4 @@ Clone.prototype.deepClone = function (data) {
 }
 
 // Export a new instance of the clone constructor
-module.exports = new Clone();
+module.exports = deepClone;
