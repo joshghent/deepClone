@@ -1,5 +1,5 @@
 var assert = require('assert');
-var deepClone = require('./');
+var deepClone = require('./bin/');
 
 describe('deepClone()', function () {
     it ('can clone primitives', function () {

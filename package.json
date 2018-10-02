@@ -2,8 +2,10 @@
   "name": "clonedeep",
   "version": "2.0.0",
   "description": "Deep copy library for any data structure",
-  "main": "index.js",
+  "main": "bin/index.js",
+  "types": "bin/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "mocha test.js"
   },
   "repository": {
@@ -27,6 +29,7 @@
   "homepage": "https://github.com/joshghent/deepClone#readme",
   "devDependencies": {
     "chai": "4.1.2",
-    "mocha": "5.2.0"
+    "mocha": "5.2.0",
+    "typescript": "^3.1.1"
   }
 }
