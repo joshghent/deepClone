@@ -2,7 +2,10 @@
 
 A single method library used for cloning any sort of data structure in javascript!
 
-[![NPM](https://nodei.co/npm/clonedeep.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/clonedeep/) [![Greenkeeper badge](https://badges.greenkeeper.io/joshghent/deepClone.svg)](https://greenkeeper.io/)
+[![NPM](https://nodei.co/npm/clonedeep.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/clonedeep/)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/joshghent/deepClone.svg)](https://greenkeeper.io/)
+[![devDependency Status](https://david-dm.org/joshghent/deepClone/dev-status.svg)](https://david-dm.org/joshghent/deepClone#info=devDependencies)
 
 ## Usage
 ```js
