@@ -1,7 +1,5 @@
-'use strict';
-
 // Method that will return the data type for any structure passed to it
-function getDataType (data) {
+function getDataType (data: Object): string {
     // Use the objects toString method on the data.
     // This will return something like [object String]
     // Then we use .slice to grab the last portion of it (in this case the "string" bit)
@@ -9,12 +7,12 @@ function getDataType (data) {
 }
 
 // Create a method to detect whether an object contains a circular reference
-function isCyclic (data) {
+function isCyclic (data: Object): boolean {
     
     // Create an array that will store the nodes of the array that have already been iterated over
-    let seenObjects = [];
+    let seenObjects: Object[] = [];
 
-    function detect (data) {
+    function detect (data: Object) {
         // If the data pass is an object
         if (data && getDataType(data) === "Object") {
             
@@ -42,7 +40,7 @@ function isCyclic (data) {
     return detect(data);
 }
 
-const deepClone = function (data) {
+const deepClone = function (data: Object): Object | undefined {
     // If the data is null or undefined then we return undefined
     if (data === null || data === undefined) {
         return undefined;
@@ -54,8 +52,9 @@ const deepClone = function (data) {
     // If the data passed is a date object
     if (dataType === "Date") {
         // Create a new date object and set the time to what it was previously
+        let dataDate = <Date>data;
         let clonedDate = new Date();
-        clonedDate.setTime(data.getTime());
+        clonedDate.setTime(dataDate.getTime());
 
         return clonedDate;
     }
@@ -86,13 +85,14 @@ const deepClone = function (data) {
     if (dataType === "Array") {
         // Create a new array that will have no references to the one we want to copy
         let copiedArray = [];
+        let dataArray = <Array<Object>>data;
 
         // Iterate over the arrays elements
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < dataArray.length; i++) {
             // Push the arrays elements to this new array
             // First recall this method with the elements
             // This is so arrays of objects and other nested data structures get correctly cloned.
-            copiedArray.push(deepClone(data[i]));
+            copiedArray.push(deepClone(dataArray[i]));
         }
 
         // Return the cloned array
@@ -106,4 +106,4 @@ const deepClone = function (data) {
 }
 
 // Export a new instance of the clone constructor
-module.exports = deepClone;
+export = deepClone;
