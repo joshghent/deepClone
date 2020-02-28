@@ -29,7 +29,7 @@
   "homepage": "https://github.com/joshghent/deepClone#readme",
   "devDependencies": {
     "chai": "4.1.2",
-    "mocha": "7.0.1",
+    "mocha": "7.1.0",
     "typescript": "^3.1.1"
   }
 }
